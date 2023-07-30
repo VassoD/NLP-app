@@ -5,17 +5,15 @@ const app = express();
 const port = 3000;
 const cors = require("cors");
 require("dotenv").config();
-app.use(cors()); // Enable CORS for all routes
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("dist"));
 
-// Endpoint to handle form submission and make API call
 app.post("/api/analyze", (req, res) => {
   const { text } = req.body;
   const apiKey = process.env.API_KEY;
 
-  // Use dynamic import() for 'node-fetch'
   import("node-fetch")
     .then((module) => module.default)
     .then((fetch) => {
@@ -26,7 +24,6 @@ app.post("/api/analyze", (req, res) => {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
-          // Handle the API response data here
           res.json(data);
         })
         .catch((error) => {
