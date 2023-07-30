@@ -1,0 +1,39 @@
+{
+  "name": "news-article-nlp",
+  "version": "1.0.0",
+  "description": "Evaluate a news article with Natural Language Processing",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "jest": "^27.0.6",
+    "mini-css-extract-plugin": "^2.7.6",
+    "node-sass": "^9.0.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.15.1",
+    "workbox-webpack-plugin": "^6.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cors": "^2.8.5",
+    "css-loader": "^6.8.1",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "presets": [
+    "@babel/preset-env"
+  ]
+}
